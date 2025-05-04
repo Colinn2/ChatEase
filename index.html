@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>ChatEase - Your Intelligent AI Assistant</title> 
+  <link rel="stylesheet" href="style.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"> 
+ </head> 
+ <body> <!-- Header with navigation --> 
+  <header> 
+   <div class="logo">
+    Chat<span>Ease</span>
+   </div> 
+   <nav> 
+    <ul> 
+     <li><a href="#features">Features</a></li> 
+     <li><a href="#about">About</a></li> 
+     <li><a href="#testimonials">Testimonials</a></li> 
+     <li><a href="chat.html" class="nav-cta">Try Now</a></li> 
+    </ul> 
+   </nav> 
+   <div class="mobile-menu-btn"> <i class="fas fa-bars"></i> 
+   </div> 
+  </header> <!-- Hero section --> 
+  <section class="hero"> 
+   <div class="hero-content"> 
+    <h1>Conversational AI That Understands You</h1> 
+    <p class="subtitle">ChatEase combines advanced natural language processing with a friendly interface to provide the most human-like AI chat experience.</p> 
+    <div class="cta-container"> <button class="cta-button" onclick="location.href='chat.html'"> <span>Start Chatting Free</span> <i class="fas fa-arrow-right"></i> </button> <button class="secondary-button"> <i class="fas fa-play"></i> <span>Watch Demo</span> </button> 
+    </div> 
+    <div class="stats-container"> 
+     <div class="stat-item"> 
+      <div class="stat-number">
+       10M+
+      </div> 
+      <div class="stat-label">
+       Conversations
+      </div> 
+     </div> 
+     <div class="stat-item"> 
+      <div class="stat-number">
+       24/7
+      </div> 
+      <div class="stat-label">
+       Availability
+      </div> 
+     </div> 
+     <div class="stat-item"> 
+      <div class="stat-number">
+       98%
+      </div> 
+      <div class="stat-label">
+       Accuracy
+      </div> 
+     </div> 
+    </div> 
+   </div> <!-- Animated demo chat interface --> 
+   <div class="demo-container"> 
+    <div class="demo-header"> 
+     <div class="demo-avatar"> 
+      <img src="https://ui-avatars.com/api/?name=AI+Assistant&amp;background=4f46e5&amp;color=fff" alt="AI Avatar"> 
+     </div> 
+     <div class="demo-info"> 
+      <h3>ChatEase AI</h3> 
+      <div class="status online">
+       Online
+      </div> 
+     </div> 
+    </div> 
+    <div class="chat-demo" id="chatDemo"> 
+     <div class="message bot-message">
+       Hello! I'm ChatEase, your personal AI assistant. How can I help you today? 
+     </div> 
+    </div> 
+    <div class="demo-input"> 
+     <input type="text" placeholder="Type a message..." disabled> <button disabled><i class="fas fa-paper-plane"></i></button> 
+    </div> 
+   </div> 
+  </section> <!-- Features section --> 
+  <section class="features" id="features"> 
+   <div class="section-header"> 
+    <h2 class="section-title">Powerful Features</h2> 
+    <p class="section-subtitle">Discover what makes ChatEase stand out from other AI assistants</p> 
+   </div> 
+   <div class="features-grid"> 
+    <div class="feature-card"> 
+     <div class="feature-icon"> <i class="fas fa-comments"></i> 
+     </div> 
+     <h3>Context-Aware Chats</h3> 
+     <p>Our AI remembers conversation context for more natural and coherent discussions.</p> <a href="#" class="feature-link">Learn more <i class="fas fa-arrow-right"></i></a> 
+    </div> 
+    <div class="feature-card"> 
+     <div class="feature-icon"> <i class="fas fa-microphone"></i> 
+     </div> 
+     <h3>Voice Interaction</h3> 
+     <p>Speak naturally and get responses in real-time with our voice recognition system.</p> <a href="#" class="feature-link">Learn more <i class="fas fa-arrow-right"></i></a> 
+    </div> 
+    <div class="feature-card"> 
+     <div class="feature-icon"> <i class="fas fa-lightbulb"></i> 
+     </div> 
+     <h3>Creative Mode</h3> 
+     <p>Generate stories, poems, code, and more with our advanced creative algorithms.</p> <a href="#" class="feature-link">Learn more <i class="fas fa-arrow-right"></i></a> 
+    </div> 
+    <div class="feature-card"> 
+     <div class="feature-icon"> <i class="fas fa-language"></i> 
+     </div> 
+     <h3>Multi-Language</h3> 
+     <p>Communicate in multiple languages with seamless translation capabilities.</p> <a href="#" class="feature-link">Learn more <i class="fas fa-arrow-right"></i></a> 
+    </div> 
+    <div class="feature-card"> 
+     <div class="feature-icon"> <i class="fas fa-brain"></i> 
+     </div> 
+     <h3>Continuous Learning</h3> 
+     <p>Our AI improves with each interaction to better serve your needs over time.</p> <a href="#" class="feature-link">Learn more <i class="fas fa-arrow-right"></i></a> 
+    </div> 
+    <div class="feature-card"> 
+     <div class="feature-icon"> <i class="fas fa-shield-alt"></i> 
+     </div> 
+     <h3>Privacy Focused</h3> 
+     <p>End-to-end encryption ensures your conversations remain completely private.</p> <a href="#" class="feature-link">Learn more <i class="fas fa-arrow-right"></i></a> 
+    </div> 
+   </div> 
+  </section> <!-- About section --> 
+  <section class="about" id="about"> 
+   <div class="about-content"> 
+    <div class="about-text"> 
+     <h2>About ChatEase</h2> 
+     <p>ChatEase was created with a simple mission: to make advanced AI technology accessible, helpful, and enjoyable for everyone. Our team of AI researchers and engineers has developed a system that understands natural language, learns from interactions, and provides meaningful assistance.</p> 
+     <p>We believe AI should enhance human capabilities, not replace them. That's why we've focused on creating an assistant that's intuitive, respectful, and genuinely helpful.</p> 
+     <div class="about-features"> 
+      <div class="about-feature"> <i class="fas fa-check-circle"></i> <span>Ethically designed AI</span> 
+      </div> 
+      <div class="about-feature"> <i class="fas fa-check-circle"></i> <span>Regular updates and improvements</span> 
+      </div> 
+      <div class="about-feature"> <i class="fas fa-check-circle"></i> <span>User-focused design</span> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="about-image"> 
+     <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80" alt="AI Technology"> 
+     <div class="image-overlay"> <i class="fas fa-play"></i> <span>See how it works</span> 
+     </div> 
+    </div> 
+   </div> 
+  </section> <!-- Testimonials section --> 
+  <section class="testimonials" id="testimonials"> 
+   <div class="section-header"> 
+    <h2 class="section-title">What Users Say</h2> 
+    <p class="section-subtitle">Don't just take our word for it - hear from our community</p> 
+   </div> 
+   <div class="testimonials-container"> 
+    <div class="testimonial-card"> 
+     <div class="testimonial-rating"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> 
+     </div> 
+     <p class="testimonial-text">"ChatEase has completely transformed how I work. It's like having a knowledgeable assistant available 24/7!"</p> 
+     <div class="testimonial-author"> 
+      <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah J."> 
+      <div> 
+       <h4>Sarah J.</h4> 
+       <p>Product Manager</p> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="testimonial-card"> 
+     <div class="testimonial-rating"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star-half-alt"></i> 
+     </div> 
+     <p class="testimonial-text">"The voice interaction is so natural. I use it daily for quick information and it saves me so much time."</p> 
+     <div class="testimonial-author"> 
+      <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Michael T."> 
+      <div> 
+       <h4>Michael T.</h4> 
+       <p>Freelance Writer</p> 
+      </div> 
+     </div> 
+    </div> 
+    <div class="testimonial-card"> 
+     <div class="testimonial-rating"> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> <i class="fas fa-star"></i> 
+     </div> 
+     <p class="testimonial-text">"As a developer, I love the code generation features. It helps me prototype ideas in seconds!"</p> 
+     <div class="testimonial-author"> 
+      <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Priya K."> 
+      <div> 
+       <h4>Priya K.</h4> 
+       <p>Software Engineer</p> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </section> <!-- CTA Section --> 
+  <section class="final-cta"> 
+   <div class="cta-content"> 
+    <h2>Ready to Experience the Future of AI Chat?</h2> 
+    <p>Join thousands of satisfied users who are already boosting their productivity with ChatEase.</p> <button class="cta-button" onclick="location.href='chat.html'"> <span>Get Started Free</span> <i class="fas fa-arrow-right"></i> </button> 
+   </div> 
+  </section> <!-- Footer --> 
+  <footer> 
+   <div class="footer-content"> 
+    <div class="footer-col"> 
+     <div class="footer-logo">
+      Chat<span>Ease</span>
+     </div> 
+     <p>Your intelligent AI assistant for everyday tasks and conversations.</p> 
+     <div class="social-icons"> <a href="#"><i class="fab fa-twitter"></i></a> <a href="#"><i class="fab fa-facebook-f"></i></a> <a href="#"><i class="fab fa-linkedin-in"></i></a> <a href="#"><i class="fab fa-instagram"></i></a> 
+     </div> 
+    </div> 
+    <div class="footer-col"> 
+     <h3>Product</h3> 
+     <ul class="footer-links"> 
+      <li><a href="#">Features</a></li> 
+      <li><a href="#">Pricing</a></li> 
+      <li><a href="#">API</a></li> 
+      <li><a href="#">Integrations</a></li> 
+     </ul> 
+    </div> 
+    <div class="footer-col"> 
+     <h3>Company</h3> 
+     <ul class="footer-links"> 
+      <li><a href="#">About Us</a></li> 
+      <li><a href="#">Careers</a></li> 
+      <li><a href="#">Blog</a></li> 
+      <li><a href="#">Contact</a></li> 
+     </ul> 
+    </div> 
+    <div class="footer-col"> 
+     <h3>Resources</h3> 
+     <ul class="footer-links"> 
+      <li><a href="#">Help Center</a></li> 
+      <li><a href="#">Community</a></li> 
+      <li><a href="#">Tutorials</a></li> 
+      <li><a href="#">Updates</a></li> 
+     </ul> 
+    </div> 
+   </div> 
+   <div class="footer-bottom"> 
+    <p>© 2025 ChatEase. All rights reserved.</p> 
+    <div class="footer-legal"> <a href="#">Privacy Policy</a> <a href="#">Terms of Service</a> <a href="#">Cookie Policy</a> 
+    </div> 
+   </div> 
+  </footer> 
+  <script src="main.js"></script> 
+ </body>
+</html>
