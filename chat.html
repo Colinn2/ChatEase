@@ -647,24 +647,24 @@
             .app-container {
                 padding: 0 0.5rem;
             }
-            
+
             .navbar {
                 padding: 0.75rem 0;
             }
-            
+
             .chats {
                 padding: 0.75rem 0;
             }
-            
+
             .message {
                 padding: 0 0.25rem;
             }
-            
+
             .message__avatar {
                 width: 32px;
                 height: 32px;
             }
-            
+
             .message__actions {
                 margin-left: calc(32px + 0.75rem);
             }
@@ -672,21 +672,21 @@
             .prompt {
                 padding: 0.75rem 0;
             }
-            
+
             .prompt__input-container {
                 padding: 0 0.25rem;
             }
-            
+
             .prompt__input-wrapper {
                 padding: 0.6rem;
                 border-radius: 20px;
                 gap: 0.3rem;
             }
-            
+
             .prompt__form-input {
                 padding: 0.6rem 0.4rem;
             }
-            
+
             .prompt__form-button {
                 width: 40px;
                 height: 40px;
@@ -696,7 +696,7 @@
             .prompt__disclaim {
                 font-size: 0.75rem;
             }
-            
+
             .file-preview {
                 font-size: 0.85rem;
                 padding: 0.6rem 0.8rem;
@@ -711,24 +711,24 @@
             .navbar__logo {
                 font-size: 1.3rem;
             }
-            
+
             .navbar__button {
                 font-size: 1.1rem;
                 padding: 0.4rem;
             }
-            
+
             .message__text {
                 font-size: 0.95rem;
             }
-            
+
             body {
                 font-size: 14px;
             }
-            
+
             .prompt__form-input {
                 font-size: 0.95rem;
             }
-            
+
             .file-preview__name {
                 max-width: 180px;
             }
@@ -851,7 +851,7 @@
             setupEventListeners();
             adjustTextareaHeight();
             updateSendButtonState();
-            
+
             // Show welcome message if no history exists
             if (appState.conversationHistory.length === 0) {
                 showWelcomeMessage();
@@ -882,12 +882,12 @@
             try {
                 const savedHistory = JSON.parse(localStorage.getItem("chatHistory") || "[]");
                 const savedFeedback = JSON.parse(localStorage.getItem("messageFeedback") || "{}");
-                
+
                 appState.conversationHistory = savedHistory;
                 appState.messageFeedback = savedFeedback;
-                
+
                 chatbox.innerHTML = "";
-                
+
                 savedHistory.forEach((turn, index) => {
                     const textPart = turn.parts.find(part => part.text !== undefined)?.text || "";
                     const filePart = turn.parts.find(part => part.inlineData !== undefined || part.fileData !== undefined);
@@ -899,10 +899,10 @@
                     const sender = turn.role === 'model' ? 'ai' : 'user';
                     const messageId = `msg-${index}-${Date.now()}`;
                     const feedback = appState.messageFeedback[messageId];
-                    
+
                     appendMessage(textPart, sender, false, fileInfo, messageId, feedback);
                 });
-                
+
                 scrollToBottom();
             } catch (error) {
                 console.error("Error loading chat history:", error);
@@ -949,9 +949,9 @@
                 "fa-info-circle"
             }`;
             toastMessage.textContent = message;
-            
+
             toastNotification.classList.add("show");
-            
+
             setTimeout(() => {
                 toastNotification.classList.remove("show");
             }, duration);
@@ -966,27 +966,27 @@
                 adjustTextareaHeight();
                 updateSendButtonState();
             });
-            
+
             // UI controls
             themeToggler.addEventListener("click", toggleTheme);
             clearHistoryButton.addEventListener("click", clearChatHistory);
-            
+
             // File handling
             fileInput.addEventListener("change", handleFileUpload);
             removeFileButton.addEventListener("click", removeFile);
-            
+
             // Prevent form submission on Enter in textarea
             document.addEventListener("keydown", (e) => {
                 if (e.key === "Enter" && e.ctrlKey) {
                     handleSendMessage();
                 }
             });
-            
+
             // Track typing indicator
             chatInput.addEventListener("keydown", () => {
                 appState.lastMessageTime = Date.now();
             });
-            
+
             // Auto-focus input on page load
             window.addEventListener("load", () => {
                 chatInput.focus();
@@ -1025,7 +1025,7 @@
             if (messageText) {
                 userParts.push({ text: messageText });
             }
-            
+
             let fileDataPart = null;
             if (file) {
                 try {
@@ -1042,7 +1042,7 @@
 
             // Create unique message ID
             const messageId = `msg-${Date.now()}`;
-            
+
             // Add user message to conversation history
             const userTurn = { role: "user", parts: userParts };
             appState.conversationHistory.push(userTurn);
@@ -1168,7 +1168,7 @@
                     } catch (e) {
                         throw new Error(`API Error: ${response.status} ${response.statusText}`);
                     }
-                    
+
                     const message = errorData?.error?.message || `HTTP ${response.status}`;
                     throw new Error(`API Error: ${message}`);
                 }
@@ -1183,7 +1183,7 @@
                     }
                     throw new Error("Received an empty response from the AI.");
                 }
-                
+
                 return text;
 
             } catch (error) {
@@ -1210,7 +1210,7 @@
             updateFilePreviewIcon(file.type);
             filePreviewContainer.style.display = "flex";
             updateSendButtonState();
-            
+
             showToast(`File "${file.name}" ready to send`, "success");
         }
 
@@ -1223,7 +1223,7 @@
         function updateFilePreviewIcon(mimeType) {
             const fileIcon = filePreviewContainer.querySelector(".file-preview__icon");
             let iconClass = "fas fa-file";
-            
+
             const iconMap = {
                 "image/": "fa-file-image",
                 "pdf": "fa-file-pdf",
@@ -1257,13 +1257,13 @@
 
         function removeFile() {
             if (!appState.currentFile) return;
-            
+
             const fileName = appState.currentFile.name;
             appState.currentFile = null;
             fileInput.value = "";
             filePreviewContainer.style.display = "none";
             updateSendButtonState();
-            
+
             showToast(`Removed file "${fileName}"`, "info");
         }
 
@@ -1281,20 +1281,20 @@
                         reject(new Error("Failed to extract base64 data from file."));
                         return;
                     }
-                    
-                    resolve({
-                        inlineData: {
+
+                        resolve({
+                          inlineData: {
                             mimeType: file.type,
-                            data: base64Data,
-                            fileName: file.name
-                        }
-                    });
-                };
-                
+                            data: base64Data
+         // No fileName field here
+       } // Correctly closes inlineData
+    }); // Correctly closes the object passed to resolve
+}; // Correctly closes reader.onload
+
                 reader.onerror = (error) => {
                     reject(error || new Error("File reading failed."));
                 };
-                
+
                 if (file.type.startsWith("text/") || file.type === "application/json") {
                     reader.readAsText(file);
                 } else {
@@ -1307,11 +1307,11 @@
         function appendMessage(text, sender, isError = false, fileInfo = null, messageId = null, feedback = null) {
             const messageDiv = document.createElement("div");
             messageDiv.className = `message message--${sender === "user" ? "outgoing" : "incoming"} new-message`;
-            
+
             if (isError) {
                 messageDiv.classList.add("message--error");
             }
-            
+
             if (messageId) {
                 messageDiv.dataset.messageId = messageId;
             }
@@ -1333,7 +1333,7 @@
                             return hljs.highlight(code, { language }).value;
                         }
                     });
-                    
+
                     // Sanitize the HTML output from marked
                     formattedText = DOMPurify.sanitize(marked.parse(text));
                 } catch (e) {
@@ -1369,7 +1369,7 @@
             if (sender === "ai" && !isError && messageId) {
                 const isHelpful = feedback === 'helpful';
                 const isUnhelpful = feedback === 'unhelpful';
-                
+
                 feedbackButtons = `
                     <div class="message__actions">
                         <button class="message__icon-button copy-button" title="Copy message">
@@ -1444,7 +1444,7 @@
                     buttonElement.classList.remove("copied");
                     buttonElement.title = "Copy message";
                 }, 2000);
-                
+
                 showToast("Message copied to clipboard", "success");
             }).catch(err => {
                 console.error('Failed to copy text: ', err);
@@ -1454,14 +1454,14 @@
 
         function handleFeedback(messageId, feedbackType) {
             if (!messageId) return;
-            
+
             // Toggle feedback
             if (appState.messageFeedback[messageId] === feedbackType) {
                 delete appState.messageFeedback[messageId];
             } else {
                 appState.messageFeedback[messageId] = feedbackType;
             }
-            
+
             // Update UI
             const messageDiv = document.querySelector(`[data-message-id="${messageId}"]`);
             if (messageDiv) {
@@ -1473,10 +1473,10 @@
                     );
                 });
             }
-            
+
             // Save feedback
             saveChatHistory();
-            
+
             showToast(
                 feedbackType === 'helpful' ? "Thanks for your feedback!" : "We'll try to improve",
                 "success"
@@ -1487,7 +1487,7 @@
             const loadingDiv = document.createElement("div");
             loadingDiv.className = "message message--incoming message--loading";
             const avatarSrc = "https://i.imgur.com/3QZ2JQq.png";
-            
+
             loadingDiv.innerHTML = `
                 <div class="message__content">
                     <img class="message__avatar" src="${avatarSrc}" alt="AI Assistant Avatar">
@@ -1500,7 +1500,7 @@
                     </div>
                 </div>
             `;
-            
+
             return loadingDiv;
         }
 
